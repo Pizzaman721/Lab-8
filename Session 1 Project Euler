@@ -1,0 +1,20 @@
+#Vincent Pizano
+#Session 1, 5/4/20
+#Project Euler 
+def HDTN():
+    An=1
+    sums=0
+    listofdivisitors=[]
+    i=0
+    a=1
+    while i>=0:
+        sums=sums+An
+        An+=1
+        if sums%a:
+            divis=sums/a
+            a+=1
+            listofdivisitors.append(divis)
+        if len(listofdivisitors) == 500:
+            break
+    return sums
+print(HDTN)
