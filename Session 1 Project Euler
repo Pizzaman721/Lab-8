@@ -1,20 +1,19 @@
 #Vincent Pizano
-#Session 1, 5/4/20
+#Session 2, 5/8/20
 #Project Euler 
-def HDTN():
-    An=1
-    sums=0
-    listofdivisitors=[]
-    i=0
-    a=1
-    while i>=0:
-        sums=sums+An
-        An+=1
-        if sums%a:
-            divis=sums/a
-            a+=1
-            listofdivisitors.append(divis)
-        if len(listofdivisitors) == 500:
-            break
-    return sums
-print(HDTN)
+import math
+
+
+def divisors(n):# creates a list of divisors, will later check if 500 divisos
+    listofdivisors=[]
+    limit=int(math.sqrt(n))
+    for a in range(1,limit+1,1):
+        if n%a==0:
+            listofdivisors.append(a)
+            if a!=n/a:
+                listofdivisors.append(n/a)
+    return len(listofdivisors)
+
+def TN(n): #checks if number is a triangle number
+    m=int(math.sqrt(n*2))
+    return m*(m+1)/2==n
