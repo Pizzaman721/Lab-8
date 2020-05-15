@@ -1,5 +1,5 @@
 #Vincent Pizano
-#Session 3, 5/11/20
+#Session 4, 5/13/20
 #Project Euler 
 import math
 
@@ -11,7 +11,7 @@ def divisors(n):# creates a list of divisors, will later check if 500 divisos
             listofdivisors.append(a)
             if a!=n/a:#getting rid of doubles from squares
                 listofdivisors.append(n/a)
-    return (listofdivisors)
+    return len(listofdivisors)
 
 def checkTN(n): #checks if number is a triangle number
     m=int(math.sqrt(n*2))
@@ -20,14 +20,15 @@ def checkTN(n): #checks if number is a triangle number
     else:
         return False
 
-def HDTN(n):
+def HDTN():
+    n=1
     while n>=1:
         if checkTN(n) is True:
             if divisors(n)==500:
                 return n
-        else: 
+        else:
             n+=1
-            return HDTN(n)
+            HDTN()
 
-n=1
-print(HDTN(n))
+print(HDTN())
+
